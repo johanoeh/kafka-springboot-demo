@@ -22,7 +22,7 @@ public class SubscriptionReceiver {
     
     private static final String GROUP_ID = "subscription_topic";
     
-    @KafkaListener(topics = "subscription_topic", groupId = GROUP_ID)
+//    @KafkaListener(topics = "subscription_topic", groupId = GROUP_ID)
     public void consume(Subscription subscription) {
         LOG.info("Consumed message {}", subscription);
     }  

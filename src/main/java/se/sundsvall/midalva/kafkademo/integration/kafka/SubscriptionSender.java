@@ -21,8 +21,12 @@ public class SubscriptionSender {
     @Value("${kafka.subscription.topic}")
     private String subscriptionTopic;
 
+    private final KafkaTemplate<String, Subscription> kafkaTemplate;
+
     @Autowired
-    private KafkaTemplate<String, Subscription> kafkaTemplate;
+    public SubscriptionSender(KafkaTemplate<String, Subscription> kafkaTemplate){
+        this.kafkaTemplate = kafkaTemplate;
+    }
 
     public void sendMessage(Subscription subscription) {
         kafkaTemplate.send(subscriptionTopic, subscription);

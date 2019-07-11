@@ -46,7 +46,7 @@ public class KafkaConsumerConfig {
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class);
-        props.put(JsonDeserializer.TRUSTED_PACKAGES , "se.sundsvall.midalva.kafkademo.model");
+        props.put(JsonDeserializer.TRUSTED_PACKAGES , "se.sundsvall.midalva.kafkademo.model");//Must be used to Allow Subscription Object to Be de-serialized
         props.put(ConsumerConfig.GROUP_ID_CONFIG, "subscription_topic");
         props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "latest");
     
